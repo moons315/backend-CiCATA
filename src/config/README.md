@@ -1,0 +1,1 @@
+Aquí puedes tener archivos de configuración, por ejemplo para la base de datos.

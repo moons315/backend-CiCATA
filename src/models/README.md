@@ -1,0 +1,1 @@
+Aquí puedes crear modelos para tu base de datos, por ejemplo usando Mongoose o Sequelize.

@@ -1,0 +1,1 @@
+Aquí puedes crear middlewares personalizados, por ejemplo para autenticación o validaciones.
