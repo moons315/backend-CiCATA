@@ -1,10 +1,9 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
-const Equipo = sequelize.define('Equipo', {
+const Catalogo = sequelize.define('Catalogo', {
   nombre: { type: DataTypes.STRING, allowNull: false },
-  descripcion: { type: DataTypes.STRING },
-  estado: { type: DataTypes.STRING, defaultValue: 'disponible' }
+  descripcion: { type: DataTypes.STRING }
 }, { timestamps: true });
 
-module.exports = Equipo;
+module.exports = Catalogo;

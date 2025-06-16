@@ -1,24 +1,23 @@
 const Horario = require('../models/horario');
 
-// backend/src/controllers/horarioController.js
+exports.getHorarios = async (req, res) => {
+  const horarios = await Horario.findAll();
+  res.json(horarios);
+};
 
+exports.createHorario = async (req, res) => {
+  const horario = await Horario.create(req.body);
+  res.status(201).json(horario);
+};
 
-// Controlador para obtener horarios disponibles para los equipos y rango de fechas 
-exports.getHorariosDisponibles = async (req, res) => {
-    const { equipo, fechaInicio, fechaFin } = req.query;
+exports.updateHorario = async (req, res) => {
+  const { id } = req.params;
+  await Horario.update(req.body, { where: { id } });
+  res.json({ mensaje: 'Horario actualizado' });
+};
 
-    if (!equipo || !fechaInicio || !fechaFin) {
-        return res.status(400).json({ message: 'equipo, fechaInicio y fechaFin son requeridos' });
-    }
-
-    try {
-        const horariosDisponibles = await Horario.find({
-            dia: { $gte: fechaInicio, $lte: fechaFin },
-            equipo: equipo
-        });
-
-        res.json(horariosDisponibles);
-    } catch (error) {
-        res.status(500).json({ message: 'Error al obtener los horarios', error });
-    }
+exports.deleteHorario = async (req, res) => {
+  const { id } = req.params;
+  await Horario.destroy({ where: { id } });
+  res.json({ mensaje: 'Horario eliminado' });
 };
