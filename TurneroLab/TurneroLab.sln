@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Turnero.Domain", "Turnero.Domain\Turnero.Domain.csproj", "{FC6694FA-07DF-4127-9D3D-BCACEC10FBE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Turnero.Data", "Turnero.Data\Turnero.Data.csproj", "{9ACFD15F-4841-459E-967E-0740E530967E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Turnero.Services", "Turnero.Services\Turnero.Services.csproj", "{3DC046EE-07E9-402D-8B98-EF8C3F7513D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Turnero.Infrastructure", "Turnero.Infrastructure\Turnero.Infrastructure.csproj", "{B98F9654-9387-4B3F-B989-4D288E039B6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Turnero.API", "Turnero.API\Turnero.API.csproj", "{6AC069E0-13EB-4598-9D16-A0501DBE2792}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC6694FA-07DF-4127-9D3D-BCACEC10FBE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC6694FA-07DF-4127-9D3D-BCACEC10FBE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC6694FA-07DF-4127-9D3D-BCACEC10FBE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC6694FA-07DF-4127-9D3D-BCACEC10FBE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ACFD15F-4841-459E-967E-0740E530967E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ACFD15F-4841-459E-967E-0740E530967E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ACFD15F-4841-459E-967E-0740E530967E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ACFD15F-4841-459E-967E-0740E530967E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DC046EE-07E9-402D-8B98-EF8C3F7513D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DC046EE-07E9-402D-8B98-EF8C3F7513D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DC046EE-07E9-402D-8B98-EF8C3F7513D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DC046EE-07E9-402D-8B98-EF8C3F7513D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B98F9654-9387-4B3F-B989-4D288E039B6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B98F9654-9387-4B3F-B989-4D288E039B6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B98F9654-9387-4B3F-B989-4D288E039B6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B98F9654-9387-4B3F-B989-4D288E039B6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AC069E0-13EB-4598-9D16-A0501DBE2792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AC069E0-13EB-4598-9D16-A0501DBE2792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AC069E0-13EB-4598-9D16-A0501DBE2792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AC069E0-13EB-4598-9D16-A0501DBE2792}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

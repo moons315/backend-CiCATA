@@ -1,0 +1,17 @@
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Data\bin\Debug\net8.0\Turnero.Data.deps.json
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Data\bin\Debug\net8.0\Turnero.Data.dll
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Data\bin\Debug\net8.0\Turnero.Data.pdb
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Data\bin\Debug\net8.0\Turnero.Domain.dll
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Data\bin\Debug\net8.0\Turnero.Domain.pdb
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Data\obj\Debug\net8.0\Turnero.Data.csproj.AssemblyReference.cache
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Data\obj\Debug\net8.0\Turnero.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Data\obj\Debug\net8.0\Turnero.Data.AssemblyInfoInputs.cache
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Data\obj\Debug\net8.0\Turnero.Data.AssemblyInfo.cs
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Data\obj\Debug\net8.0\Turnero.Data.csproj.CoreCompileInputs.cache
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Data\obj\Debug\net8.0\Turnero..143E2FB2.Up2Date
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Data\obj\Debug\net8.0\Turnero.Data.dll
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Data\obj\Debug\net8.0\refint\Turnero.Data.dll
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Data\obj\Debug\net8.0\Turnero.Data.pdb
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Data\obj\Debug\net8.0\ref\Turnero.Data.dll
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Data\bin\Debug\net8.0\Turnero.Data.runtimeconfig.json
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Data\obj\Debug\net8.0\Turnero.Data.genruntimeconfig.cache

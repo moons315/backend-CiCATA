@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Turnero.Domain/1.0.0": {
+        "runtime": {
+          "Turnero.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Turnero.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

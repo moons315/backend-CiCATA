@@ -1,1 +1,0 @@
-Aquí puedes poner la lógica de negocio que no va en los controladores.

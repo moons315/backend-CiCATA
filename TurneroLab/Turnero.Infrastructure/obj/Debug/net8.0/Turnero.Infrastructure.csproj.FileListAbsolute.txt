@@ -1,0 +1,17 @@
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Infrastructure\bin\Debug\net8.0\Turnero.Infrastructure.deps.json
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Infrastructure\bin\Debug\net8.0\Turnero.Infrastructure.dll
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Infrastructure\bin\Debug\net8.0\Turnero.Infrastructure.pdb
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Infrastructure\bin\Debug\net8.0\Turnero.Data.dll
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Infrastructure\bin\Debug\net8.0\Turnero.Domain.dll
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Infrastructure\bin\Debug\net8.0\Turnero.Domain.pdb
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Infrastructure\bin\Debug\net8.0\Turnero.Data.pdb
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Infrastructure\obj\Debug\net8.0\Turnero.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Infrastructure\obj\Debug\net8.0\Turnero.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Infrastructure\obj\Debug\net8.0\Turnero.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Infrastructure\obj\Debug\net8.0\Turnero.Infrastructure.AssemblyInfo.cs
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Infrastructure\obj\Debug\net8.0\Turnero.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Infrastructure\obj\Debug\net8.0\Turnero..A69F9FC4.Up2Date
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Infrastructure\obj\Debug\net8.0\Turnero.Infrastructure.dll
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Infrastructure\obj\Debug\net8.0\refint\Turnero.Infrastructure.dll
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Infrastructure\obj\Debug\net8.0\Turnero.Infrastructure.pdb
+C:\Users\jsegovia\Desktop\MisRepos\TurneroLab\Turnero.Infrastructure\obj\Debug\net8.0\ref\Turnero.Infrastructure.dll
