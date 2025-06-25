@@ -17,84 +17,71 @@ namespace Turnero.Services.Implementations
             _context = context;
         }
 
-        public async Task<IEnumerable<Reservation>> GetAllAsync()
-        {
-            return await _context.Reservations
+        public async Task<IEnumerable<Reservation>> GetAllAsync() =>
+            await _context.Reservations
                 .Include(r => r.User)
                 .Include(r => r.Device)
-                    .ThenInclude(d => d.Lab)
-                .Include(r => r.Device)
-                    .ThenInclude(d => d.Process)
-                .Include(r => r.Extensions)
                 .ToListAsync();
-        }
 
-        public async Task<Reservation?> GetByIdAsync(int id)
-        {
-            return await _context.Reservations
+        public async Task<Reservation> GetByIdAsync(int id) =>
+            await _context.Reservations
                 .Include(r => r.User)
                 .Include(r => r.Device)
-                    .ThenInclude(d => d.Lab)
-                .Include(r => r.Device)
-                    .ThenInclude(d => d.Process)
-                .Include(r => r.Extensions)
-                .FirstOrDefaultAsync(r => r.Id == id);
-        }
+                .FirstOrDefaultAsync(r => r.Id == id)
+            ?? throw new KeyNotFoundException($"Reserva {id} no encontrada");
 
-        public async Task<Reservation> CreateAsync(Reservation reservation)
+        public async Task<Reservation> CreateAsync(int userId, int deviceId, DateTime startTime, DateTime endTime, string observations)
         {
-            reservation.Status = "Pendiente";
-            reservation.CreatedAt = DateTime.UtcNow;
+            var reservation = new Reservation
+            {
+                UserId = userId,
+                DeviceId = deviceId,
+                StartTime = startTime,
+                EndTime = endTime,
+                Observations = observations,
+                Status = ReservationStatus.Pendiente,
+                CreatedAt = DateTime.UtcNow
+            };
             _context.Reservations.Add(reservation);
             await _context.SaveChangesAsync();
             return reservation;
         }
 
-        public async Task<Reservation> ExtendAsync(int reservationId, DateTime newEndTime, string? observations)
+        public async Task CancelAsync(int id)
         {
-            var reservation = await _context.Reservations.FindAsync(reservationId)
-                                 ?? throw new KeyNotFoundException("Reserva no encontrada");
-            reservation.EndTime = newEndTime;
-            reservation.Status = "Extendida";
-
-            var extension = new ReservationExtension
-            {
-                ReservationId = reservationId,
-                RequestedAt = DateTime.UtcNow,
-                NewEndTime = newEndTime,
-                Approved = true,
-                Observations = observations ?? ""
-            };
-
-            _context.ReservationExtensions.Add(extension);
+            var r = await GetByIdAsync(id);
+            r.Status = ReservationStatus.Cancelada;
             await _context.SaveChangesAsync();
-            return reservation;
         }
 
-        public async Task<Reservation> ReleaseAsync(int reservationId)
+        public async Task CancelByAdminAsync(int id)
         {
-            var reservation = await _context.Reservations.FindAsync(reservationId)
-                                 ?? throw new KeyNotFoundException("Reserva no encontrada");
-            reservation.EndTime = DateTime.UtcNow;
-            reservation.Status = "Finalizada";
+            // Mismo comportamiento que CancelAsync,
+            // pero reservado solo para Administradores en el Controller
+            var r = await GetByIdAsync(id);
+            r.Status = ReservationStatus.Cancelada;
             await _context.SaveChangesAsync();
-            return reservation;
         }
 
-        public async Task<Reservation> CompleteAsync(int reservationId)
+        public async Task ExtendAsync(int id)
         {
-            var reservation = await _context.Reservations.FindAsync(reservationId)
-                                 ?? throw new KeyNotFoundException("Reserva no encontrada");
-            reservation.Status = "Finalizada";
+            var r = await GetByIdAsync(id);
+            r.Status = ReservationStatus.Extendida;
+            r.EndTime = r.EndTime.AddMinutes(r.Device.DurationMinutes);
             await _context.SaveChangesAsync();
-            return reservation;
         }
 
-        public async Task CancelAsync(int reservationId)
+        public async Task ReleaseAsync(int id)
         {
-            var reservation = await _context.Reservations.FindAsync(reservationId)
-                                 ?? throw new KeyNotFoundException("Reserva no encontrada");
-            reservation.Status = "Cancelada";
+            var r = await GetByIdAsync(id);
+            r.Status = ReservationStatus.Liberada;
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task CompleteAsync(int id)
+        {
+            var r = await GetByIdAsync(id);
+            r.Status = ReservationStatus.Completada;
             await _context.SaveChangesAsync();
         }
     }

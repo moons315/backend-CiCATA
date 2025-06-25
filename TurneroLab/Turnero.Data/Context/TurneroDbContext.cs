@@ -118,13 +118,22 @@ namespace Turnero.Data.Context
             {
                 entity.ToTable("Reservations");
                 entity.HasKey(r => r.Id);
+
                 entity.Property(r => r.StartTime)
                       .IsRequired();
                 entity.Property(r => r.EndTime)
                       .IsRequired();
+
+                // Convertir tu enum ReservationStatus a string en BD
                 entity.Property(r => r.Status)
+                      .HasConversion<string>()
                       .IsRequired()
                       .HasMaxLength(20);
+
+                entity.Property(r => r.CancelledByAdmin)
+                      .IsRequired()
+                      .HasDefaultValue(false);
+
                 entity.Property(r => r.Observations)
                       .HasMaxLength(1000);
                 entity.Property(r => r.CreatedAt)
@@ -140,7 +149,7 @@ namespace Turnero.Data.Context
                       .HasForeignKey(r => r.DeviceId)
                       .OnDelete(DeleteBehavior.Restrict);
 
-                // Evitar solapamientos: índice único por DeviceId, StartTime, EndTime
+                // Índice para evitar solapamientos
                 entity.HasIndex(r => new { r.DeviceId, r.StartTime, r.EndTime })
                       .HasDatabaseName("IX_Reservations_Device_Time");
             });

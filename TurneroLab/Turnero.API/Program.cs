@@ -2,18 +2,23 @@ using System;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using Turnero.Services.Settings;
+using Microsoft.Extensions.Options;
+using Turnero.API.Settings;
 using Turnero.Data.Context;
-using Turnero.Infrastructure.Background;
 using Turnero.Infrastructure.Email;
-using Turnero.Services.Implementations;
+using Turnero.Infrastructure.Background;
+using Turnero.Services.Settings;
 using Turnero.Services.Interfaces;
+using Turnero.Services.Implementations;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. Registrar DbContext de EF Core con MySQL
+// 1. Cargar configuración de appsettings.json
+builder.Configuration
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+
+// 2. Registrar DbContext de EF Core con MySQL
 builder.Services.AddDbContext<TurneroDbContext>(options =>
     options.UseMySql(
         builder.Configuration.GetConnectionString("DefaultConnection"),
@@ -21,21 +26,29 @@ builder.Services.AddDbContext<TurneroDbContext>(options =>
     )
 );
 
-// 2. Cargar configuración de JWT desde appsettings.json
+// 3. Configuración de JWT
 builder.Services.Configure<JwtSettings>(
     builder.Configuration.GetSection("JwtSettings")
 );
 
-// 3. Registrar servicios de aplicación
+// 4. Configuración de Email
+builder.Services.Configure<EmailSettings>(
+    builder.Configuration.GetSection("Email")
+);
+
+// 5. Registrar servicios de aplicación
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ILabService, LabService>();
 builder.Services.AddScoped<IDeviceService, DeviceService>();
 builder.Services.AddScoped<IReservationService, ReservationService>();
 builder.Services.AddScoped<IJwtService, JwtService>();
+builder.Services.AddScoped<IReportService, ReportService>();
+
+// 6. Registrar EmailService y BackgroundService
 builder.Services.AddSingleton<IEmailService, EmailService>();
 builder.Services.AddHostedService<ReservationBackgroundService>();
 
-// 4. Configurar autenticación JWT
+// 7. Configurar autenticación JWT
 var jwtConfig = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>();
 var key = Encoding.UTF8.GetBytes(jwtConfig.SecretKey);
 
@@ -46,6 +59,8 @@ builder.Services.AddAuthentication(options =>
 })
 .AddJwtBearer(options =>
 {
+    options.RequireHttpsMetadata = false;
+    options.SaveToken = true;
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer = true,
@@ -59,10 +74,10 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-// **¡¡NUEVO!!** 5. Registrar el servicio de autorización
+// 8. Registrar autorización
 builder.Services.AddAuthorization();
 
-// 6. Registrar controllers, Swagger y CORS
+// 9. Registrar controllers, Swagger y CORS
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -76,9 +91,10 @@ builder.Services.AddCors(policy =>
 
 var app = builder.Build();
 
-// 7. Middleware
+// 10. Middleware
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI();
 }
@@ -86,39 +102,10 @@ if (app.Environment.IsDevelopment())
 app.UseCors();
 app.UseHttpsRedirection();
 
-// **Importante:** el orden importa
 app.UseAuthentication();
 app.UseAuthorization();
 
-// 8. Rutas de controllers
+// 11. Mapear controllers
 app.MapControllers();
 
-// 9. Endpoint de ejemplo (opcional)
-var summaries = new[]
-{
-    "Freezing","Bracing","Chilly","Cool","Mild",
-    "Warm","Balmy","Hot","Sweltering","Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast")
-.WithOpenApi();
-
 app.Run();
-
-// Record de ejemplo para el endpoint anterior
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

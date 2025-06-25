@@ -7,7 +7,7 @@ using MimeKit;
 namespace Turnero.Infrastructure.Email
 {
     /// <summary>
-    /// Implementación de IEmailService usando MailKit.
+    /// Implementación de IEmailService usando MailKit y la configuración de appsettings.json.
     /// </summary>
     public class EmailService : IEmailService
     {
@@ -21,27 +21,20 @@ namespace Turnero.Infrastructure.Email
         public async Task SendEmailAsync(string to, string subject, string htmlBody)
         {
             var message = new MimeMessage();
-
-            // De: configurado en appsettings.json
             message.From.Add(new MailboxAddress(
                 _config["Email:FromName"],
                 _config["Email:FromAddress"]
             ));
-
-            // Para:
             message.To.Add(MailboxAddress.Parse(to));
             message.Subject = subject;
+            message.Body = new BodyBuilder { HtmlBody = htmlBody }.ToMessageBody();
 
-            // Cuerpo HTML
-            var builder = new BodyBuilder { HtmlBody = htmlBody };
-            message.Body = builder.ToMessageBody();
-
-            // Conexión SMTP
             using var client = new SmtpClient();
+            // ahora con SslOnConnect para puerto 465
             await client.ConnectAsync(
                 _config["Email:SmtpHost"],
-                int.Parse(_config["Email:SmtpPort"] ?? "587"),
-                SecureSocketOptions.StartTls
+                int.Parse(_config["Email:SmtpPort"] ?? "465"),
+                SecureSocketOptions.SslOnConnect
             );
             await client.AuthenticateAsync(
                 _config["Email:SmtpUser"],

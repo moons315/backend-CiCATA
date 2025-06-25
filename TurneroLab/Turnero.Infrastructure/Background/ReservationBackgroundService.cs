@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 using Turnero.Data.Context;
 using Turnero.Infrastructure.Email;
-using Microsoft.EntityFrameworkCore;
+using Turnero.Domain.Entities;   
 
 namespace Turnero.Infrastructure.Background
 {
@@ -47,46 +48,56 @@ namespace Turnero.Infrastructure.Background
                     var reminders = await db.Reservations
                         .Include(r => r.User)
                         .Include(r => r.Device)
-                        .Where(r => r.Status == "Pendiente"
-                                 && r.StartTime > now
-                                 && r.StartTime <= soon)
+                        .Where(r =>
+                            r.Status == ReservationStatus.Pendiente &&
+                            r.StartTime > now &&
+                            r.StartTime <= soon
+                        )
                         .ToListAsync(stoppingToken);
 
                     foreach (var r in reminders)
                     {
                         var body = $"<p>Hola {r.User.Username},<br/>" +
-                                   $"Tu turno para “{r.Device.Name}” empieza a las {r.StartTime:HH:mm}.</p>";
+                                   $"Tu turno para «{r.Device.Name}» empieza a las {r.StartTime:HH:mm}.</p>";
                         await email.SendEmailAsync(r.User.Email, "Recordatorio de turno", body);
+                        _logger.LogInformation("Recordatorio enviado a {email}", r.User.Email);
                     }
 
-                    // 2) Finalizar reservas vencidas
+                    // 2) Finalizar reservas vencidas (Activa o Extendida)
                     var expired = await db.Reservations
                         .Include(r => r.User)
                         .Include(r => r.Device)
-                        .Where(r => (r.Status == "Activa" || r.Status == "Extendida")
-                                 && r.EndTime <= now)
+                        .Where(r =>
+                            (r.Status == ReservationStatus.Activa ||
+                             r.Status == ReservationStatus.Extendida) &&
+                            r.EndTime <= now
+                        )
                         .ToListAsync(stoppingToken);
 
                     foreach (var r in expired)
                     {
-                        r.Status = "Finalizada";
+                        r.Status = ReservationStatus.Completada;
                         await db.SaveChangesAsync(stoppingToken);
+                        _logger.LogInformation("Reserva {id} marcada como Completada", r.Id);
 
                         // 3) Notificar al siguiente en cola
                         var next = await db.Reservations
                             .Include(n => n.User)
                             .Include(n => n.Device)
-                            .Where(n => n.DeviceId == r.DeviceId
-                                     && n.Status == "Pendiente"
-                                     && n.StartTime > now)
+                            .Where(n =>
+                                n.DeviceId == r.DeviceId &&
+                                n.Status == ReservationStatus.Pendiente &&
+                                n.StartTime > now
+                            )
                             .OrderBy(n => n.StartTime)
                             .FirstOrDefaultAsync(stoppingToken);
 
                         if (next != null)
                         {
                             var body2 = $"<p>Hola {next.User.Username},<br/>" +
-                                        $"Tu turno para “{next.Device.Name}” ahora está disponible.</p>";
+                                        $"Tu turno para «{next.Device.Name}» ahora está disponible.</p>";
                             await email.SendEmailAsync(next.User.Email, "Equipo disponible", body2);
+                            _logger.LogInformation("Notificación de disponibilidad enviada a {email}", next.User.Email);
                         }
                     }
                 }

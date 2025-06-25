@@ -1,4 +1,6 @@
-﻿namespace Turnero.Infrastructure.Email
+﻿using System.Threading.Tasks;
+
+namespace Turnero.Infrastructure.Email
 {
     public interface IEmailService
     {

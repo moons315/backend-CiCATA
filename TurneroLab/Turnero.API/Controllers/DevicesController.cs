@@ -1,13 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Turnero.API.DTOs;
-using Turnero.Domain.Entities;
+using System.Threading.Tasks;
 using Turnero.Services.Interfaces;
+using Turnero.API.DTOs;
 
 namespace Turnero.API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/v1/[controller]")]
     public class DevicesController : ControllerBase
@@ -19,91 +18,28 @@ namespace Turnero.API.Controllers
             _deviceService = deviceService;
         }
 
-        // GET: api/v1/devices
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<DeviceDto>>> GetAll()
-        {
-            var devices = await _deviceService.GetAllAsync();
-            var dtos = devices.Select(d => new DeviceDto
-            {
-                Id = d.Id,
-                Name = d.Name,
-                ProcessId = d.ProcessId,
-                ProcessName = d.Process.Name,
-                LabId = d.LabId,
-                LabName = d.Lab.Name,
-                DurationMinutes = d.DurationMinutes,
-                ConfigJson = d.ConfigJson
-            });
-            return Ok(dtos);
-        }
+        public async Task<IActionResult> GetAll()
+            => Ok(await _deviceService.GetAllAsync());
 
-        // GET: api/v1/devices/{id}
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<DeviceDto>> GetById(int id)
-        {
-            var d = await _deviceService.GetByIdAsync(id);
-            if (d is null) return NotFound();
-            var dto = new DeviceDto
-            {
-                Id = d.Id,
-                Name = d.Name,
-                ProcessId = d.ProcessId,
-                ProcessName = d.Process.Name,
-                LabId = d.LabId,
-                LabName = d.Lab.Name,
-                DurationMinutes = d.DurationMinutes,
-                ConfigJson = d.ConfigJson
-            };
-            return Ok(dto);
-        }
+        public async Task<IActionResult> GetById(int id)
+            => Ok(await _deviceService.GetByIdAsync(id));
 
-        // GET: api/v1/devices/by-lab/{labId}
         [HttpGet("by-lab/{labId:int}")]
-        public async Task<ActionResult<IEnumerable<DeviceDto>>> GetByLab(int labId)
-        {
-            var devices = await _deviceService.GetByLabIdAsync(labId);
-            var dtos = devices.Select(d => new DeviceDto
-            {
-                Id = d.Id,
-                Name = d.Name,
-                ProcessId = d.ProcessId,
-                ProcessName = d.Process.Name,
-                LabId = d.LabId,
-                LabName = d.Lab.Name,
-                DurationMinutes = d.DurationMinutes,
-                ConfigJson = d.ConfigJson
-            });
-            return Ok(dtos);
-        }
+        public async Task<IActionResult> GetByLab(int labId)
+            => Ok(await _deviceService.GetByLabIdAsync(labId));
 
-        // POST: api/v1/devices
         [HttpPost]
-        public async Task<ActionResult<DeviceDto>> Create([FromBody] CreateDeviceDto dto)
+        public async Task<IActionResult> Create(CreateDeviceDto dto)
         {
-            var device = new Device
-            {
-                Name = dto.Name,
-                ProcessId = dto.ProcessId,
-                LabId = dto.LabId,
-                DurationMinutes = dto.DurationMinutes,
-                ConfigJson = dto.ConfigJson ?? "{}"
-            };
-            var created = await _deviceService.CreateAsync(device);
-
-            var resultDto = new DeviceDto
-            {
-                Id = created.Id,
-                Name = created.Name,
-                ProcessId = created.ProcessId,
-                ProcessName = created.Process.Name,
-                LabId = created.LabId,
-                LabName = created.Lab.Name,
-                DurationMinutes = created.DurationMinutes,
-                ConfigJson = created.ConfigJson
-            };
-
-            return CreatedAtAction(nameof(GetById), new { id = resultDto.Id }, resultDto);
+            var dev = await _deviceService.CreateAsync(
+                dto.Name,
+                dto.LabId,
+                dto.DurationMinutes,
+                dto.ConfigJson
+            );
+            return CreatedAtAction(nameof(GetById), new { id = dev.Id }, dev);
         }
     }
 }
