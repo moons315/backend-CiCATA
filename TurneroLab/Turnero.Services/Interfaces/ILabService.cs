@@ -7,7 +7,7 @@ namespace Turnero.Services.Interfaces
     public interface ILabService
     {
         Task<IEnumerable<Lab>> GetAllAsync();
-        Task<Lab?> GetByIdAsync(int id);
-        Task<Lab> CreateAsync(Lab lab);
+        Task<Lab> GetByIdAsync(int id);
+        Task<Lab> CreateAsync(string name, string location);
     }
 }

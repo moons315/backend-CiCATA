@@ -1,69 +1,55 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Turnero.API.DTOs;
-using Turnero.Domain.Entities;
+using System.Threading.Tasks;
 using Turnero.Services.Interfaces;
+using Turnero.Services.Exceptions;
+using Turnero.API.DTOs;
+using Turnero.Infrastructure.Email;
+
 
 namespace Turnero.API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/v1/[controller]")]
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
+        private readonly IJwtService _jwtService;
 
-        public UsersController(IUserService userService)
+        public UsersController(IUserService userService, IJwtService jwtService)
         {
             _userService = userService;
+            _jwtService = jwtService;
         }
 
-        // GET: api/v1/users
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> GetAll()
-        {
-            var users = await _userService.GetAllAsync();
-            return Ok(users);
-        }
-
-        // GET: api/v1/users/5
-        [HttpGet("{id:int}")]
-        public async Task<ActionResult<User>> GetById(int id)
-        {
-            var user = await _userService.GetByIdAsync(id);
-            if (user is null)
-                return NotFound();
-            return Ok(user);
-        }
-
-        // POST: api/v1/users
+        // ------------------ Público: Registro ------------------
+        [AllowAnonymous]
         [HttpPost]
-        public async Task<ActionResult<User>> Create([FromBody] CreateUserDto dto)
+        public async Task<IActionResult> Create(CreateUserDto dto)
         {
-            // Mapea DTO a entidad
-            var user = new User
-            {
-                Username = dto.Username,
-                Email = dto.Email,
-                RoleId = dto.RoleId
-            };
-
-            var created = await _userService.CreateAsync(user, dto.Password);
-
-            // Devuelve 201 Created con la ruta al nuevo recurso
-            return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+            var user = await _userService.CreateAsync(dto.Username, dto.Email, dto.Password, dto.RoleId);
+            return CreatedAtAction(nameof(GetById), new { id = user.Id }, user);
         }
 
-        // POST: api/v1/users/authenticate
+        // ------------------ Público: Login ------------------
+        [AllowAnonymous]
         [HttpPost("authenticate")]
-        public async Task<ActionResult> Authenticate([FromBody] CreateUserDto dto)
+        public async Task<IActionResult> Authenticate(AuthenticateDto dto)
         {
-            var valid = await _userService.ValidateCredentialsAsync(dto.Username, dto.Password);
-            if (!valid)
-                return Unauthorized(new { message = "Usuario o contraseña incorrectos" });
-
-            // Aquí podrías generar y devolver un JWT
-            return Ok(new { message = "Credenciales válidas" });
+            var user = await _userService.AuthenticateAsync(dto.Username, dto.Password);
+            var token = _jwtService.GenerateToken(user);
+            return Ok(new { token });
         }
+
+        // ------------------ Protegido: Obtener todos los usuarios ------------------
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+            => Ok(await _userService.GetAllAsync());
+
+        // ------------------ Protegido: Obtener un usuario por Id ------------------
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetById(int id)
+            => Ok(await _userService.GetByIdAsync(id));
     }
 }

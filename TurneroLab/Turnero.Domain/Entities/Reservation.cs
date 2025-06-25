@@ -6,29 +6,20 @@ namespace Turnero.Domain.Entities
     public class Reservation
     {
         public int Id { get; set; }
-
-        // Usuario que reserva
         public int UserId { get; set; }
-        public User User { get; set; }
-
-        // Dispositivo reservado
+        public User User { get; set; } = null!;
         public int DeviceId { get; set; }
-        public Device Device { get; set; }
+        public Device Device { get; set; } = null!;
 
-        // Fechas de inicio y fin
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
 
-        // Pendiente, Activa, Extendida, Finalizada, Cancelada
-        public string Status { get; set; }
+        public ReservationStatus Status { get; set; }
 
-        // Observaciones libres
-        public string Observations { get; set; }
+        public bool CancelledByAdmin { get; set; } = false;
 
         public DateTime CreatedAt { get; set; }
-
-        // Posibles extensiones de esta reserva
-        public ICollection<ReservationExtension> Extensions { get; set; }
-            = new List<ReservationExtension>();
+        public string? Observations { get; set; }
+        public ICollection<ReservationExtension> Extensions { get; set; } = new List<ReservationExtension>();
     }
 }

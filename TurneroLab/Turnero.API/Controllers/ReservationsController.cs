@@ -1,116 +1,86 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Turnero.API.DTOs;
-using Turnero.Domain.Entities;
+using System.Threading.Tasks;
 using Turnero.Services.Interfaces;
+using Turnero.API.DTOs;
 
 namespace Turnero.API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/v1/[controller]")]
     public class ReservationsController : ControllerBase
     {
-        private readonly IReservationService _service;
+        private readonly IReservationService _resService;
 
-        public ReservationsController(IReservationService service)
+        public ReservationsController(IReservationService resService)
         {
-            _service = service;
+            _resService = resService;
         }
 
-        // GET: api/v1/reservations
+        // 1) Obtener todas las reservas
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ReservationDto>>> GetAll()
-        {
-            var list = await _service.GetAllAsync();
-            var dtos = list.Select(r => ToDto(r));
-            return Ok(dtos);
-        }
+        public async Task<IActionResult> GetAll() =>
+            Ok(await _resService.GetAllAsync());
 
-        // GET: api/v1/reservations/5
+        // 2) Obtener una reserva por Id
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<ReservationDto>> GetById(int id)
-        {
-            var r = await _service.GetByIdAsync(id);
-            if (r is null) return NotFound();
-            return Ok(ToDto(r));
-        }
+        public async Task<IActionResult> GetById(int id) =>
+            Ok(await _resService.GetByIdAsync(id));
 
-        // POST: api/v1/reservations
+        // 3) Crear una nueva reserva
         [HttpPost]
-        public async Task<ActionResult<ReservationDto>> Create([FromBody] CreateReservationDto dto)
+        public async Task<IActionResult> Create(CreateReservationDto dto)
         {
-            var entity = new Reservation
-            {
-                UserId = dto.UserId,
-                DeviceId = dto.DeviceId,
-                StartTime = dto.StartTime,
-                EndTime = dto.EndTime,
-                Observations = dto.Observations ?? ""
-            };
-            var created = await _service.CreateAsync(entity);
-            var result = ToDto(created);
-            return CreatedAtAction(nameof(GetById), new { id = result.Id }, result);
+            var res = await _resService.CreateAsync(
+                dto.UserId,
+                dto.DeviceId,
+                dto.StartTime,
+                dto.EndTime,
+                dto.Observations
+            );
+            return CreatedAtAction(nameof(GetById), new { id = res.Id }, res);
         }
 
-        // PUT: api/v1/reservations/5/extend
-        [HttpPut("{id:int}/extend")]
-        public async Task<ActionResult<ReservationDto>> Extend(int id, [FromBody] ExtendReservationDto dto)
-        {
-            var updated = await _service.ExtendAsync(id, dto.NewEndTime, dto.Observations);
-            return Ok(ToDto(updated));
-        }
-
-        // PUT: api/v1/reservations/5/release
-        [HttpPut("{id:int}/release")]
-        public async Task<ActionResult<ReservationDto>> Release(int id)
-        {
-            var updated = await _service.ReleaseAsync(id);
-            return Ok(ToDto(updated));
-        }
-
-        // PUT: api/v1/reservations/5/complete
-        [HttpPut("{id:int}/complete")]
-        public async Task<ActionResult<ReservationDto>> Complete(int id)
-        {
-            var updated = await _service.CompleteAsync(id);
-            return Ok(ToDto(updated));
-        }
-
-        // DELETE: api/v1/reservations/5
-        [HttpDelete("{id:int}")]
+        // 4) Cancelar propia reserva (por el usuario dueño)
+        [HttpPut("{id:int}/cancel")]
         public async Task<IActionResult> Cancel(int id)
         {
-            await _service.CancelAsync(id);
+            await _resService.CancelAsync(id);
             return NoContent();
         }
 
-        // Helper to map entity → DTO
-        private static ReservationDto ToDto(Reservation r) => new()
+        // 5) Cancelar reserva ajena (solo Administradores)
+        [Authorize(Roles = "Administrador")]
+        [HttpPut("{id:int}/cancel-by-admin")]
+        public async Task<IActionResult> CancelByAdmin(int id)
         {
-            Id = r.Id,
-            UserId = r.UserId,
-            Username = r.User?.Username,
-            DeviceId = r.DeviceId,
-            DeviceName = r.Device?.Name,
-            LabId = r.Device?.LabId ?? 0,
-            LabName = r.Device?.Lab?.Name,
-            ProcessId = r.Device?.ProcessId ?? 0,
-            ProcessName = r.Device?.Process?.Name,
-            StartTime = r.StartTime,
-            EndTime = r.EndTime,
-            Status = r.Status,
-            Observations = r.Observations,
-            CreatedAt = r.CreatedAt,
-            Extensions = r.Extensions.Select(e => new ReservationExtensionDto
-            {
-                Id = e.Id,
-                RequestedAt = e.RequestedAt,
-                NewEndTime = e.NewEndTime,
-                Approved = e.Approved,
-                Observations = e.Observations
-            })
-        };
+            await _resService.CancelByAdminAsync(id);
+            return NoContent();
+        }
+
+        // 6) Extender la reserva
+        [HttpPut("{id:int}/extend")]
+        public async Task<IActionResult> Extend(int id)
+        {
+            await _resService.ExtendAsync(id);
+            return NoContent();
+        }
+
+        // 7) Liberar antes de tiempo
+        [HttpPut("{id:int}/release")]
+        public async Task<IActionResult> Release(int id)
+        {
+            await _resService.ReleaseAsync(id);
+            return NoContent();
+        }
+
+        // 8) Marcar como completada
+        [HttpPut("{id:int}/complete")]
+        public async Task<IActionResult> Complete(int id)
+        {
+            await _resService.CompleteAsync(id);
+            return NoContent();
+        }
     }
 }

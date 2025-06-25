@@ -7,6 +7,7 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+<<<<<<< HEAD
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[Turnero.API.DTOs.DeviceDto, Turnero.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
@@ -18,6 +19,9 @@
         "StatusCode": 200
       }
     ]
+=======
+    "ReturnTypes": []
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
   },
   {
     "ContainingType": "Turnero.API.Controllers.DevicesController",
@@ -33,6 +37,7 @@
         "IsRequired": true
       }
     ],
+<<<<<<< HEAD
     "ReturnTypes": [
       {
         "Type": "Turnero.API.DTOs.DeviceDto",
@@ -44,6 +49,9 @@
         "StatusCode": 200
       }
     ]
+=======
+    "ReturnTypes": []
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
   },
   {
     "ContainingType": "Turnero.API.Controllers.DevicesController",
@@ -59,6 +67,7 @@
         "IsRequired": true
       }
     ],
+<<<<<<< HEAD
     "ReturnTypes": [
       {
         "Type": "Turnero.API.DTOs.DeviceDto",
@@ -70,6 +79,9 @@
         "StatusCode": 200
       }
     ]
+=======
+    "ReturnTypes": []
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
   },
   {
     "ContainingType": "Turnero.API.Controllers.DevicesController",
@@ -85,6 +97,7 @@
         "IsRequired": true
       }
     ],
+<<<<<<< HEAD
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[Turnero.API.DTOs.DeviceDto, Turnero.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
@@ -96,6 +109,19 @@
         "StatusCode": 200
       }
     ]
+=======
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Turnero.API.Controllers.EmailController",
+    "Method": "TestEmail",
+    "RelativePath": "api/v1/Email/test",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
   },
   {
     "ContainingType": "Turnero.API.Controllers.LabsController",
@@ -105,6 +131,7 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+<<<<<<< HEAD
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[Turnero.API.DTOs.LabDto, Turnero.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
@@ -116,6 +143,9 @@
         "StatusCode": 200
       }
     ]
+=======
+    "ReturnTypes": []
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
   },
   {
     "ContainingType": "Turnero.API.Controllers.LabsController",
@@ -131,6 +161,7 @@
         "IsRequired": true
       }
     ],
+<<<<<<< HEAD
     "ReturnTypes": [
       {
         "Type": "Turnero.API.DTOs.LabDto",
@@ -142,6 +173,9 @@
         "StatusCode": 200
       }
     ]
+=======
+    "ReturnTypes": []
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
   },
   {
     "ContainingType": "Turnero.API.Controllers.LabsController",
@@ -157,6 +191,7 @@
         "IsRequired": true
       }
     ],
+<<<<<<< HEAD
     "ReturnTypes": [
       {
         "Type": "Turnero.API.DTOs.LabDto",
@@ -168,6 +203,19 @@
         "StatusCode": 200
       }
     ]
+=======
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Turnero.API.Controllers.ReportsController",
+    "Method": "Cancellations",
+    "RelativePath": "api/v1/Reports/cancellations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
   },
   {
     "ContainingType": "Turnero.API.Controllers.ReservationsController",
@@ -177,6 +225,7 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+<<<<<<< HEAD
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[Turnero.API.DTOs.ReservationDto, Turnero.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
@@ -188,6 +237,9 @@
         "StatusCode": 200
       }
     ]
+=======
+    "ReturnTypes": []
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
   },
   {
     "ContainingType": "Turnero.API.Controllers.ReservationsController",
@@ -203,6 +255,7 @@
         "IsRequired": true
       }
     ],
+<<<<<<< HEAD
     "ReturnTypes": [
       {
         "Type": "Turnero.API.DTOs.ReservationDto",
@@ -214,6 +267,9 @@
         "StatusCode": 200
       }
     ]
+=======
+    "ReturnTypes": []
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
   },
   {
     "ContainingType": "Turnero.API.Controllers.ReservationsController",
@@ -229,6 +285,7 @@
         "IsRequired": true
       }
     ],
+<<<<<<< HEAD
     "ReturnTypes": [
       {
         "Type": "Turnero.API.DTOs.ReservationDto",
@@ -240,12 +297,36 @@
         "StatusCode": 200
       }
     ]
+=======
+    "ReturnTypes": []
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
   },
   {
     "ContainingType": "Turnero.API.Controllers.ReservationsController",
     "Method": "Cancel",
+<<<<<<< HEAD
     "RelativePath": "api/v1/Reservations/{id}",
     "HttpMethod": "DELETE",
+=======
+    "RelativePath": "api/v1/Reservations/{id}/cancel",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Turnero.API.Controllers.ReservationsController",
+    "Method": "CancelByAdmin",
+    "RelativePath": "api/v1/Reservations/{id}/cancel-by-admin",
+    "HttpMethod": "PUT",
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -271,6 +352,7 @@
         "IsRequired": true
       }
     ],
+<<<<<<< HEAD
     "ReturnTypes": [
       {
         "Type": "Turnero.API.DTOs.ReservationDto",
@@ -282,6 +364,9 @@
         "StatusCode": 200
       }
     ]
+=======
+    "ReturnTypes": []
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
   },
   {
     "ContainingType": "Turnero.API.Controllers.ReservationsController",
@@ -295,6 +380,7 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
+<<<<<<< HEAD
       },
       {
         "Name": "dto",
@@ -313,6 +399,11 @@
         "StatusCode": 200
       }
     ]
+=======
+      }
+    ],
+    "ReturnTypes": []
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
   },
   {
     "ContainingType": "Turnero.API.Controllers.ReservationsController",
@@ -328,6 +419,7 @@
         "IsRequired": true
       }
     ],
+<<<<<<< HEAD
     "ReturnTypes": [
       {
         "Type": "Turnero.API.DTOs.ReservationDto",
@@ -359,6 +451,9 @@
         "StatusCode": 200
       }
     ]
+=======
+    "ReturnTypes": []
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
   },
   {
     "ContainingType": "Turnero.API.Controllers.UsersController",
@@ -374,6 +469,7 @@
         "IsRequired": true
       }
     ],
+<<<<<<< HEAD
     "ReturnTypes": [
       {
         "Type": "Turnero.Domain.Entities.User",
@@ -385,6 +481,19 @@
         "StatusCode": 200
       }
     ]
+=======
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Turnero.API.Controllers.UsersController",
+    "Method": "GetAll",
+    "RelativePath": "api/v1/Users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
   },
   {
     "ContainingType": "Turnero.API.Controllers.UsersController",
@@ -400,6 +509,7 @@
         "IsRequired": true
       }
     ],
+<<<<<<< HEAD
     "ReturnTypes": [
       {
         "Type": "Turnero.Domain.Entities.User",
@@ -411,6 +521,9 @@
         "StatusCode": 200
       }
     ]
+=======
+    "ReturnTypes": []
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
   },
   {
     "ContainingType": "Turnero.API.Controllers.UsersController",
@@ -422,11 +535,16 @@
     "Parameters": [
       {
         "Name": "dto",
+<<<<<<< HEAD
         "Type": "Turnero.API.DTOs.CreateUserDto",
+=======
+        "Type": "Turnero.API.DTOs.AuthenticateDto",
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
+<<<<<<< HEAD
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec__DisplayClass0_0",
@@ -446,5 +564,7 @@
       }
     ],
     "EndpointName": "GetWeatherForecast"
+=======
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
   }
 ]

@@ -8,7 +8,7 @@ namespace Turnero.Services.Interfaces
     {
         Task<User?> GetByIdAsync(int id);
         Task<IEnumerable<User>> GetAllAsync();
-        Task<User> CreateAsync(User user, string password);
-        Task<bool> ValidateCredentialsAsync(string username, string password);
+        Task<User> CreateAsync(string username, string email, string password, int roleId);
+        Task<User> AuthenticateAsync(string username, string password);
     }
 }

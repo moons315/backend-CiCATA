@@ -3,6 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\angel\\Desktop\\CICATA\\backend\\TurneroLab\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{6AC069E0-13EB-4598-9D16-A0501DBE2792}|Turnero.API\\Turnero.API.csproj|c:\\users\\angel\\desktop\\cicata\\backend\\turnerolab\\turnero.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{6AC069E0-13EB-4598-9D16-A0501DBE2792}|Turnero.API\\Turnero.API.csproj|solutionrelative:turnero.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -25,6 +26,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{6AC069E0-13EB-4598-9D16-A0501DBE2792}|Turnero.API\\Turnero.API.csproj|c:\\users\\angel\\desktop\\cicata\\backend\\turnerolab\\turnero.api\\dtos\\createreservationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6AC069E0-13EB-4598-9D16-A0501DBE2792}|Turnero.API\\Turnero.API.csproj|solutionrelative:turnero.api\\dtos\\createreservationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{FC6694FA-07DF-4127-9D3D-BCACEC10FBE1}|Turnero.Domain\\Turnero.Domain.csproj|c:\\users\\jsegovia\\desktop\\misrepos\\turnerolab\\turnero.domain\\entities\\reservationstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC6694FA-07DF-4127-9D3D-BCACEC10FBE1}|Turnero.Domain\\Turnero.Domain.csproj|solutionrelative:turnero.domain\\entities\\reservationstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC6694FA-07DF-4127-9D3D-BCACEC10FBE1}|Turnero.Domain\\Turnero.Domain.csproj|c:\\users\\jsegovia\\desktop\\misrepos\\turnerolab\\turnero.domain\\entities\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC6694FA-07DF-4127-9D3D-BCACEC10FBE1}|Turnero.Domain\\Turnero.Domain.csproj|solutionrelative:turnero.domain\\entities\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B98F9654-9387-4B3F-B989-4D288E039B6E}|Turnero.Infrastructure\\Turnero.Infrastructure.csproj|c:\\users\\jsegovia\\desktop\\misrepos\\turnerolab\\turnero.infrastructure\\background\\reservationbackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B98F9654-9387-4B3F-B989-4D288E039B6E}|Turnero.Infrastructure\\Turnero.Infrastructure.csproj|solutionrelative:turnero.infrastructure\\background\\reservationbackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
     },
     {
       "AbsoluteMoniker": "D:0:0:{3DC046EE-07E9-402D-8B98-EF8C3F7513D7}|Turnero.Services\\Turnero.Services.csproj|c:\\users\\angel\\desktop\\cicata\\backend\\turnerolab\\turnero.services\\implementations\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,6 +48,7 @@
       "RelativeMoniker": "D:0:0:{3DC046EE-07E9-402D-8B98-EF8C3F7513D7}|Turnero.Services\\Turnero.Services.csproj|solutionrelative:turnero.services\\interfaces\\ireservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{6AC069E0-13EB-4598-9D16-A0501DBE2792}|Turnero.API\\Turnero.API.csproj|c:\\users\\angel\\desktop\\cicata\\backend\\turnerolab\\turnero.api\\controllers\\devicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6AC069E0-13EB-4598-9D16-A0501DBE2792}|Turnero.API\\Turnero.API.csproj|solutionrelative:turnero.api\\controllers\\devicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -65,6 +79,34 @@
     {
       "AbsoluteMoniker": "D:0:0:{6AC069E0-13EB-4598-9D16-A0501DBE2792}|Turnero.API\\Turnero.API.csproj|c:\\users\\angel\\desktop\\cicata\\backend\\turnerolab\\turnero.api\\dtos\\createlabdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6AC069E0-13EB-4598-9D16-A0501DBE2792}|Turnero.API\\Turnero.API.csproj|solutionrelative:turnero.api\\dtos\\createlabdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{6AC069E0-13EB-4598-9D16-A0501DBE2792}|Turnero.API\\Turnero.API.csproj|c:\\users\\jsegovia\\desktop\\misrepos\\turnerolab\\turnero.api\\controllers\\reservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AC069E0-13EB-4598-9D16-A0501DBE2792}|Turnero.API\\Turnero.API.csproj|solutionrelative:turnero.api\\controllers\\reservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ACFD15F-4841-459E-967E-0740E530967E}|Turnero.Data\\Turnero.Data.csproj|c:\\users\\jsegovia\\desktop\\misrepos\\turnerolab\\turnero.data\\context\\turnerodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ACFD15F-4841-459E-967E-0740E530967E}|Turnero.Data\\Turnero.Data.csproj|solutionrelative:turnero.data\\context\\turnerodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DC046EE-07E9-402D-8B98-EF8C3F7513D7}|Turnero.Services\\Turnero.Services.csproj|c:\\users\\jsegovia\\desktop\\misrepos\\turnerolab\\turnero.services\\interfaces\\ireportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DC046EE-07E9-402D-8B98-EF8C3F7513D7}|Turnero.Services\\Turnero.Services.csproj|solutionrelative:turnero.services\\interfaces\\ireportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC069E0-13EB-4598-9D16-A0501DBE2792}|Turnero.API\\Turnero.API.csproj|c:\\users\\jsegovia\\desktop\\misrepos\\turnerolab\\turnero.api\\controllers\\reportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AC069E0-13EB-4598-9D16-A0501DBE2792}|Turnero.API\\Turnero.API.csproj|solutionrelative:turnero.api\\controllers\\reportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DC046EE-07E9-402D-8B98-EF8C3F7513D7}|Turnero.Services\\Turnero.Services.csproj|c:\\users\\jsegovia\\desktop\\misrepos\\turnerolab\\turnero.services\\implementations\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DC046EE-07E9-402D-8B98-EF8C3F7513D7}|Turnero.Services\\Turnero.Services.csproj|solutionrelative:turnero.services\\implementations\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DC046EE-07E9-402D-8B98-EF8C3F7513D7}|Turnero.Services\\Turnero.Services.csproj|c:\\users\\jsegovia\\desktop\\misrepos\\turnerolab\\turnero.services\\dtos\\cancellationsreportdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DC046EE-07E9-402D-8B98-EF8C3F7513D7}|Turnero.Services\\Turnero.Services.csproj|solutionrelative:turnero.services\\dtos\\cancellationsreportdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DC046EE-07E9-402D-8B98-EF8C3F7513D7}|Turnero.Services\\Turnero.Services.csproj|c:\\users\\jsegovia\\desktop\\misrepos\\turnerolab\\turnero.services\\turnero.services.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3DC046EE-07E9-402D-8B98-EF8C3F7513D7}|Turnero.Services\\Turnero.Services.csproj|solutionrelative:turnero.services\\turnero.services.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
     }
   ],
   "DocumentGroupContainers": [
@@ -74,11 +116,16 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 0,
+=======
+          "SelectedChildIndex": 2,
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\angel\\Desktop\\CICATA\\backend\\TurneroLab\\Turnero.API\\appsettings.Development.json",
               "RelativeDocumentMoniker": "Turnero.API\\appsettings.Development.json",
@@ -87,10 +134,21 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-06-25T16:05:54.379Z",
+=======
+              "Title": "ReservationStatus.cs",
+              "DocumentMoniker": "C:\\Users\\jsegovia\\Desktop\\MisRepos\\TurneroLab\\Turnero.Domain\\Entities\\ReservationStatus.cs",
+              "RelativeDocumentMoniker": "Turnero.Domain\\Entities\\ReservationStatus.cs",
+              "ToolTip": "C:\\Users\\jsegovia\\Desktop\\MisRepos\\TurneroLab\\Turnero.Domain\\Entities\\ReservationStatus.cs",
+              "RelativeToolTip": "Turnero.Domain\\Entities\\ReservationStatus.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T12:46:13.88Z",
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 5,
               "Title": "CreateReservationDto.cs",
               "DocumentMoniker": "C:\\Users\\angel\\Desktop\\CICATA\\backend\\TurneroLab\\Turnero.API\\DTOs\\CreateReservationDto.cs",
@@ -105,31 +163,61 @@
             {
               "$type": "Document",
               "DocumentIndex": 6,
+=======
+              "DocumentIndex": 2,
+              "Title": "ReservationBackgroundService.cs",
+              "DocumentMoniker": "C:\\Users\\jsegovia\\Desktop\\MisRepos\\TurneroLab\\Turnero.Infrastructure\\Background\\ReservationBackgroundService.cs",
+              "RelativeDocumentMoniker": "Turnero.Infrastructure\\Background\\ReservationBackgroundService.cs",
+              "ToolTip": "C:\\Users\\jsegovia\\Desktop\\MisRepos\\TurneroLab\\Turnero.Infrastructure\\Background\\ReservationBackgroundService.cs",
+              "RelativeToolTip": "Turnero.Infrastructure\\Background\\ReservationBackgroundService.cs",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAswHIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T12:42:17.161Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ReservationsController.cs",
+              "DocumentMoniker": "C:\\Users\\jsegovia\\Desktop\\MisRepos\\TurneroLab\\Turnero.API\\Controllers\\ReservationsController.cs",
+              "RelativeDocumentMoniker": "Turnero.API\\Controllers\\ReservationsController.cs",
+              "ToolTip": "C:\\Users\\jsegovia\\Desktop\\MisRepos\\TurneroLab\\Turnero.API\\Controllers\\ReservationsController.cs",
+              "RelativeToolTip": "Turnero.API\\Controllers\\ReservationsController.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAA5wFYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T12:37:52.948Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
               "Title": "ReservationService.cs",
               "DocumentMoniker": "C:\\Users\\angel\\Desktop\\CICATA\\backend\\TurneroLab\\Turnero.Services\\Implementations\\ReservationService.cs",
               "RelativeDocumentMoniker": "Turnero.Services\\Implementations\\ReservationService.cs",
               "ToolTip": "C:\\Users\\angel\\Desktop\\CICATA\\backend\\TurneroLab\\Turnero.Services\\Implementations\\ReservationService.cs",
               "RelativeToolTip": "Turnero.Services\\Implementations\\ReservationService.cs",
-              "ViewState": "AQIAAEwAAAAAAAAAAAAswGUAAAAAAAAA",
+              "ViewState": "AQIAABoAAAAAAAAAAAAgwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T17:39:04.535Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T12:35:16.337Z"
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 7,
+=======
+              "DocumentIndex": 4,
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
               "Title": "IReservationService.cs",
               "DocumentMoniker": "C:\\Users\\angel\\Desktop\\CICATA\\backend\\TurneroLab\\Turnero.Services\\Interfaces\\IReservationService.cs",
               "RelativeDocumentMoniker": "Turnero.Services\\Interfaces\\IReservationService.cs",
               "ToolTip": "C:\\Users\\angel\\Desktop\\CICATA\\backend\\TurneroLab\\Turnero.Services\\Interfaces\\IReservationService.cs",
               "RelativeToolTip": "Turnero.Services\\Interfaces\\IReservationService.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAA5wB8AAAAAAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA0AAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T17:36:35.56Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T12:34:07.19Z"
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\angel\\Desktop\\CICATA\\backend\\TurneroLab\\Turnero.API\\Program.cs",
@@ -163,12 +251,33 @@
               "ToolTip": "C:\\Users\\angel\\Desktop\\CICATA\\backend\\TurneroLab\\Turnero.API\\Controllers\\DevicesController.cs",
               "RelativeToolTip": "Turnero.API\\Controllers\\DevicesController.cs",
               "ViewState": "AQIAAFMAAAAAAAAAAAAgwFwAAAAAAAAA",
+=======
+              "DocumentIndex": 6,
+              "Title": "TurneroDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\jsegovia\\Desktop\\MisRepos\\TurneroLab\\Turnero.Data\\Context\\TurneroDbContext.cs",
+              "RelativeDocumentMoniker": "Turnero.Data\\Context\\TurneroDbContext.cs",
+              "ToolTip": "C:\\Users\\jsegovia\\Desktop\\MisRepos\\TurneroLab\\Turnero.Data\\Context\\TurneroDbContext.cs",
+              "RelativeToolTip": "Turnero.Data\\Context\\TurneroDbContext.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAowIQAAAAzAAAA",
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T17:32:26.467Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T12:18:15.263Z"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Reservation.cs",
+              "DocumentMoniker": "C:\\Users\\jsegovia\\Desktop\\MisRepos\\TurneroLab\\Turnero.Domain\\Entities\\Reservation.cs",
+              "RelativeDocumentMoniker": "Turnero.Domain\\Entities\\Reservation.cs",
+              "ToolTip": "C:\\Users\\jsegovia\\Desktop\\MisRepos\\TurneroLab\\Turnero.Domain\\Entities\\Reservation.cs",
+              "RelativeToolTip": "Turnero.Domain\\Entities\\Reservation.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAmwBIAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T12:17:36.666Z"
+            },
+            {
+              "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 9,
               "Title": "DeviceDto.cs",
               "DocumentMoniker": "C:\\Users\\angel\\Desktop\\CICATA\\backend\\TurneroLab\\Turnero.API\\DTOs\\DeviceDto.cs",
@@ -205,10 +314,46 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-17T17:49:40.837Z",
               "EditorCaption": ""
+=======
+              "DocumentIndex": 8,
+              "Title": "ReportsController.cs",
+              "DocumentMoniker": "C:\\Users\\jsegovia\\Desktop\\MisRepos\\TurneroLab\\Turnero.API\\Controllers\\ReportsController.cs",
+              "RelativeDocumentMoniker": "Turnero.API\\Controllers\\ReportsController.cs",
+              "ToolTip": "C:\\Users\\jsegovia\\Desktop\\MisRepos\\TurneroLab\\Turnero.API\\Controllers\\ReportsController.cs",
+              "RelativeToolTip": "Turnero.API\\Controllers\\ReportsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T12:13:00.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ReportService.cs",
+              "DocumentMoniker": "C:\\Users\\jsegovia\\Desktop\\MisRepos\\TurneroLab\\Turnero.Services\\Implementations\\ReportService.cs",
+              "RelativeDocumentMoniker": "Turnero.Services\\Implementations\\ReportService.cs",
+              "ToolTip": "C:\\Users\\jsegovia\\Desktop\\MisRepos\\TurneroLab\\Turnero.Services\\Implementations\\ReportService.cs",
+              "RelativeToolTip": "Turnero.Services\\Implementations\\ReportService.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwAEAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T12:12:29.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IReportService.cs",
+              "DocumentMoniker": "C:\\Users\\jsegovia\\Desktop\\MisRepos\\TurneroLab\\Turnero.Services\\Interfaces\\IReportService.cs",
+              "RelativeDocumentMoniker": "Turnero.Services\\Interfaces\\IReportService.cs",
+              "ToolTip": "C:\\Users\\jsegovia\\Desktop\\MisRepos\\TurneroLab\\Turnero.Services\\Interfaces\\IReportService.cs",
+              "RelativeToolTip": "Turnero.Services\\Interfaces\\IReportService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T12:11:48.145Z"
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
+<<<<<<< HEAD
               "Title": "CreateDeviceDto.cs",
               "DocumentMoniker": "C:\\Users\\angel\\Desktop\\CICATA\\backend\\TurneroLab\\Turnero.API\\DTOs\\CreateDeviceDto.cs",
               "RelativeDocumentMoniker": "Turnero.API\\DTOs\\CreateDeviceDto.cs",
@@ -218,10 +363,21 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-17T15:54:13.621Z",
               "EditorCaption": ""
+=======
+              "Title": "CancellationsReportDto.cs",
+              "DocumentMoniker": "C:\\Users\\jsegovia\\Desktop\\MisRepos\\TurneroLab\\Turnero.Services\\DTOs\\CancellationsReportDto.cs",
+              "RelativeDocumentMoniker": "Turnero.Services\\DTOs\\CancellationsReportDto.cs",
+              "ToolTip": "C:\\Users\\jsegovia\\Desktop\\MisRepos\\TurneroLab\\Turnero.Services\\DTOs\\CancellationsReportDto.cs",
+              "RelativeToolTip": "Turnero.Services\\DTOs\\CancellationsReportDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T12:11:30.162Z"
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
+<<<<<<< HEAD
               "Title": "DeviceService.cs",
               "DocumentMoniker": "C:\\Users\\angel\\Desktop\\CICATA\\backend\\TurneroLab\\Turnero.Services\\Implementations\\DeviceService.cs",
               "RelativeDocumentMoniker": "Turnero.Services\\Implementations\\DeviceService.cs",
@@ -283,6 +439,16 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-17T15:45:15.731Z",
               "EditorCaption": ""
+=======
+              "Title": "Turnero.Services.csproj",
+              "DocumentMoniker": "C:\\Users\\jsegovia\\Desktop\\MisRepos\\TurneroLab\\Turnero.Services\\Turnero.Services.csproj",
+              "RelativeDocumentMoniker": "Turnero.Services\\Turnero.Services.csproj",
+              "ToolTip": "C:\\Users\\jsegovia\\Desktop\\MisRepos\\TurneroLab\\Turnero.Services\\Turnero.Services.csproj",
+              "RelativeToolTip": "Turnero.Services\\Turnero.Services.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-24T12:04:43.713Z"
+>>>>>>> 3a9683bcb1b3cf56b4f4c4f990c948d6ded88282
             }
           ]
         }

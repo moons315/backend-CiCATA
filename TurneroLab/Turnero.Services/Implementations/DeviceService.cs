@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Turnero.Data.Context;
@@ -17,39 +17,30 @@ namespace Turnero.Services.Implementations
             _context = context;
         }
 
-        // Devuelve todos los dispositivos, incluyendo datos de Lab y Process
-        public async Task<IEnumerable<Device>> GetAllAsync()
-        {
-            return await _context.Devices
-                .Include(d => d.Lab)
-                .Include(d => d.Process)
+        public async Task<IEnumerable<Device>> GetAllAsync() =>
+            await _context.Devices.ToListAsync();
+
+        public async Task<Device> GetByIdAsync(int id) =>
+            await _context.Devices.FindAsync(id)
+                ?? throw new KeyNotFoundException($"Dispositivo {id} no encontrado");
+
+        public async Task<IEnumerable<Device>> GetByLabIdAsync(int labId) =>
+            await _context.Devices
+                .Where(d => d.LabId == labId)
                 .ToListAsync();
-        }
 
-        // Devuelve un dispositivo por su ID
-        public async Task<Device?> GetByIdAsync(int id)
+        public async Task<Device> CreateAsync(string name, int labId, int durationMinutes, string configJson)
         {
-            return await _context.Devices
-                .Include(d => d.Lab)
-                .Include(d => d.Process)
-                .FirstOrDefaultAsync(d => d.Id == id);
-        }
-
-        // Crea un nuevo dispositivo
-        public async Task<Device> CreateAsync(Device device)
-        {
+            var device = new Device
+            {
+                Name = name,
+                LabId = labId,
+                DurationMinutes = durationMinutes,
+                ConfigJson = configJson
+            };
             _context.Devices.Add(device);
             await _context.SaveChangesAsync();
             return device;
-        }
-
-        // Lista dispositivos filtrando por laboratorio
-        public async Task<IEnumerable<Device>> GetByLabIdAsync(int labId)
-        {
-            return await _context.Devices
-                .Where(d => d.LabId == labId)
-                .Include(d => d.Process)
-                .ToListAsync();
         }
     }
 }
