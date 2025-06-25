@@ -541,7 +541,10 @@
       "System.Threading.Channels/6.0.0": {},
       "Turnero.Domain/1.0.0": {
         "runtime": {
-          "Turnero.Domain.dll": {}
+          "Turnero.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

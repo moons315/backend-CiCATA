@@ -1,11 +1,1 @@
-{
-  "Version": 1,
-  "Hash": "9WIgCecj2ma2eRWecDfGPGmZ3PvXt4+GZKROfKb8zlw=",
-  "Source": "Turnero.API",
-  "BasePath": "_content/Turnero.API",
-  "Mode": "Default",
-  "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
-}
+{"Version":1,"Hash":"xRJEp/EfSOFAQC/1gStwj2I4zH3ToxVvSEM38WvmHuM=","Source":"Turnero.API","BasePath":"_content/Turnero.API","Mode":"Default","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}

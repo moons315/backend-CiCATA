@@ -14,11 +14,22 @@ builder.Services.AddDbContext<TurneroDbContext>(options =>
     )
 );
 
-// 2. Registrar servicios de aplicaci�n
+// 2. Registrar servicios de aplicación
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ILabService, LabService>();
 builder.Services.AddScoped<IDeviceService, DeviceService>();
 builder.Services.AddScoped<IReservationService, ReservationService>();
+
+// --- POLÍTICA DE CORS ---
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
 // 3. Registrar controllers, Swagger y API Explorer
 builder.Services.AddControllers();
@@ -33,6 +44,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// --- USAR CORS ---
+app.UseCors();
 
 // app.UseHttpsRedirection();
 app.UseAuthorization();
